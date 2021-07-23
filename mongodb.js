@@ -14,9 +14,10 @@ MongoClient.connect(
     }
     const db = client.db(databaseName);
 
-    db.collection("tasks")
-      .deleteOne({
-        description: "Code",
+    db.collection("users")
+      .insertOne({
+        name: "kanishth",
+        age: 21,
       })
       .then((result) => {
         console.log(result);
@@ -24,5 +25,16 @@ MongoClient.connect(
       .catch((error) => {
         console.log(error);
       });
+
+    // db.collection("tasks")
+    //   .deleteOne({
+    //     description: "Code",
+    //   })
+    //   .then((result) => {
+    //     console.log(result);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
   }
 );
